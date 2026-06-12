@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fernanda ❤️ Raphael</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,#3b0d1a 0%,transparent 40%),
+radial-gradient(circle at bottom,#1f0f2b 0%,transparent 40%);
+z-index:-1;
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:5rem;
+font-weight:700;
+}
+
+.subtitle{
+margin-top:15px;
+font-size:1.2rem;
+opacity:.85;
+}
+
+.heart{
+font-size:5rem;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.15);}
+100%{transform:scale(1);}
+}
+
+section{
+padding:80px 20px;
+}
+
+.title{
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+text-align:center;
+margin-bottom:40px;
+}
+
+.gallery{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:420px;
+object-fit:cover;
+border-radius:25px;
+transition:.4s;
+box-shadow:0 15px 30px rgba(0,0,0,.5);
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.message{
+max-width:900px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+backdrop-filter:blur(10px);
+line-height:2;
+font-size:1.1rem;
+text-align:center;
+}
+
+.counter{
+font-size:2rem;
+text-align:center;
+font-weight:600;
+margin-top:20px;
+}
+
+.button{
+display:block;
+margin:40px auto;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#ff4f81;
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:.3s;
+}
+
+.button:hover{
+transform:scale(1.05);
+}
+
+.surprise{
+display:none;
+text-align:center;
+font-size:1.8rem;
+padding:20px;
+}
+
+footer{
+padding:60px 20px;
+text-align:center;
+opacity:.7;
+}
+
+.floating-heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 10s linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="heart">❤️</div>
+
+<h1>Fernanda & Raphael</h1>
+
+<p class="subtitle">
+Desde 25 de Maio de 2022 ♾️
+</p>
+
+</header>
+
+<section>
+
+<h2 class="title">Nossos Momentos</h2>
+
+<div class="gallery">
+<img src="foto1.jpg" alt="">
+<img src="foto2.jpg" alt="">
+<img src="foto3.jpg" alt="">
+<img src="foto4.jpg" alt="">
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Para Você ❤️</h2>
+
+<div class="message">
+
+<p>
+Você é a melhor parte do meu dia e da minha vida.
+</p>
+
+<br>
+
+<p>
+É a melhor parte do meu coração.
+</p>
+
+<br>
+
+<p>
+Seu sorriso, seu olhar e seu queixinho são as melhores perfeições que eu já conheci.
+</p>
+
+<br>
+
+<p>
+Você me faz um homem melhor todos os dias.
+Obrigado por estar sempre comigo.
+</p>
+
+<br>
+
+<p>
+Eu te amo mil milhões de infinitos para sempre ❤️
+</p>
+
+<br><br>
+
+<strong>
+Com todo meu amor,<br>
+Raphael ❤️
+</strong>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Quanto Tempo Te Amando</h2>
+
+<div id="contador" class="counter"></div>
+
+<button class="button" onclick="mostrarSurpresa()">
+Clique Aqui ❤️
+</button>
+
+<div id="surpresa" class="surprise">
+Fernanda, você é o amor da minha vida. ❤️
+</div>
+
+</section>
+
+<footer>
+Fernanda ❤️ Raphael<br>
+Para Sempre ♾️
+</footer>
+
+<script>
+
+const inicio = new Date("2022-05-25T00:00:00");
+
+function atualizarContador(){
+
+const agora = new Date();
+
+let anos = agora.getFullYear() - inicio.getFullYear();
+let meses = agora.getMonth() - inicio.getMonth();
+let dias = agora.getDate() - inicio.getDate();
+
+if(dias < 0){
+meses--;
+}
+
+if(meses < 0){
+anos--;
+meses += 12;
+}
+
+const totalDias = Math.floor(
+(agora - inicio) / (1000*60*60*24)
+);
+
+document.getElementById("contador").innerHTML =
+`${anos} anos, ${meses} meses e ${totalDias} dias ❤️`;
+
+}
+
+setInterval(atualizarContador,1000);
+atualizarContador();
+
+function mostrarSurpresa(){
+document.getElementById("surpresa").style.display = "block";
+}
+
+function criarCoracao(){
+
+const coracao = document.createElement("div");
+
+coracao.classList.add("floating-heart");
+
+coracao.innerHTML = "❤️";
+
+coracao.style.left = Math.random() * 100 + "vw";
+
+coracao.style.fontSize =
+(Math.random()*25 + 15) + "px";
+
+document.body.appendChild(coracao);
+
+setTimeout(()=>{
+coracao.remove();
+},10000);
+
+}
+
+setInterval(criarCoracao,500);
+
+</script>
+
+</body>
+</html>
